@@ -1,0 +1,665 @@
+/*
+Theme Name: Photographer
+Theme URI:https://wordpress.org/themes/photographer
+Author: Loay Ali Emam
+Description: Basic Theme For Photographers To Use Including Pictures , Albums , Locations and More.
+Tags: photographer,photo blog,camera
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+* {
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family:"roboto";
+	
+}
+
+/* Small Size Styling. */
+@media(min-width:20px) {
+	
+	body {
+		
+		padding:0;
+		margin:0;
+		position:relative;
+		min-height:100vh;
+		margin-top:50px;
+		
+	}
+	
+	/* Upper Nav Start. */
+	
+	#uppernav {
+		
+		height:50px;
+		width:100%;
+		position:fixed;
+		bottom:calc(100vh - 50px);
+		left:0;
+		z-index:1000;
+		color:#fff;
+		
+	}
+	
+	#site-id > #site-logo {
+		
+		height:40px !important;
+		margin:5px;
+		border-radius:50%;
+		
+	}
+	
+	#site-id > #site-name {
+		
+		margin:15px 0;
+		text-indent:10px;
+		font-weight:bolder;
+		
+	}
+	
+	#uppernav > p#site-id {
+		
+		width:50%;
+		margin:0;
+		display:inline-flex;
+		align-items:center;
+		
+	}
+	
+	#uppernav > button#menu-toggle {
+		
+		float:right;
+		width:50px;
+		height:50px;
+		border:none;
+		background:none;
+		color:#fff;
+		z-index:5;
+		
+	}
+	
+	/* Upper Nav End. */
+	
+	/* Upper Menu Start. */
+	
+	#uppermenu {
+		
+		position:absolute;
+		top:100%;
+		left:0;
+		width:100%;
+		height:calc(100vh - 100%);
+		background:#00000044;
+		margin:0;
+		z-index:0;
+		transition:left 0.88s ease;
+		padding:0;
+		overflow:auto;
+		
+	}
+	
+	/* Upper Menu End. */
+	
+	/* Default Menu Styling Start. */
+	
+	.menu {
+		
+		list-style-type:none;
+		padding:0;
+		text-align:center;
+	
+	}
+	
+	.menu li {
+		
+		padding-top:10px;
+		text-transform:capitalize;
+		
+	}
+	
+	.menu a , .menu i {
+		
+		font-size:32px;
+		color:#fff;
+		transition:all 0.5s ease;
+		text-decoration:underline 0px;
+		cursor:pointer;
+		
+	}
+	
+	.menu a:hover , .menu i:hover {
+		
+		text-decoration:underline 7px;
+		
+	}
+	
+	#uppermenu #social-links {
+		
+		padding-bottom:10vmin;
+		
+	}
+	
+	/* Special For Social Media Links. */
+	#social-links , #menu-social-media {
+		
+		display:flex;
+		justify-content:space-around;
+		padding-top:35px;
+		width:100%;
+		
+	}
+	
+	#down {
+		
+		position:absolute;
+		bottom:50px;
+		left:0;
+		width:100%;
+		text-align:center;
+		
+	}
+	
+	/* Default Menu Styling End. */
+	
+	/* Post Displaying Start. */
+	
+	#post {
+		
+		display:inline-flex;
+		justify-content:center;
+		align-items:center;
+		text-align:center;
+		flex-wrap:wrap;
+		width:100%;
+	
+	}
+	
+	#post #title {
+		
+		font-size:35px;
+		display:block;
+		width:100%;
+		margin:auto;
+		background:#DDD;
+		padding:10px;
+		font-weight:bolder;
+		
+	}
+	
+	#post p:not(:first-of-type) {
+		
+		font-size:20px;
+		padding:10px;
+		
+	}
+	
+	
+	
+	/* Post Displaying End. */
+	
+	/* Footer Start. */
+	
+	footer.lower-nav {
+		
+		position:absolute;
+		left:0;
+		width:100%;
+		text-align:center;
+		top:100%;
+		height:auto;
+		
+	}
+	
+	#footer-widgets {
+		
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:center;
+		
+	}
+	
+	#footer-widgets li {
+		
+		list-style-type:none;
+		width:100%;
+		padding:0 10px;
+		
+	}
+	
+	.lower-nav section {
+		
+		padding:20px;
+		
+	}
+	
+	/* Footer End. */
+	
+	/* Gallery Widget Styling Begin. */
+	#gallery-grid {
+		
+		display:flex;
+		flex-wrap:wrap;
+		align-items:flex-start;
+		justify-content:center;
+		
+	}
+	
+	#gallery-grid > #picture {
+		
+		position:relative;
+		width:100%;
+		overflow:hidden;
+		height:250px;
+	
+	}
+	
+	#picture > img { 
+	
+		width:100%;
+		min-height:inherit;
+		max-height:auto;
+		height:auto;
+		
+	}
+	
+	#picture > .layout {
+		
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:linear-gradient(#222,#00000000,#00000000);
+		color:#fff;
+		font-size:25px;
+		text-align:center;
+		transition:opacity 0.5s ease;
+		opacity:0.0;
+		cursor:pointer;
+		
+	}
+	
+	#picture > .layout:hover {
+		
+		opacity:1.0;
+		
+	}
+	
+	/* Gallery Widget End. */
+
+	/* Single Pagination Start. */
+	
+	#single-pagination {
+		
+		display:flex;
+		justify-content:space-around;
+		flex-wrap:wrap;
+		align-items:center;
+		width:100%;
+		margin-top:10px;
+		
+	}
+	
+	#single-pagination p {
+		
+		padding:20px;
+		font-size:25px;
+		background:#222;
+		
+	}
+	
+	#single-pagination a , #single-pagination i {
+		
+		color:#fff;
+		
+	}
+	
+	#single-pagination i {
+		
+		font-size:25px;
+		padding:7.5px 25px 0 0;
+		
+	}
+	
+	/* Single Pagination End. */
+	
+	/* Author Page Styling Start. */
+	
+	#author-identify {
+		
+		padding-top:50px;
+		
+	}
+	
+	#author-img {
+		
+		border-radius:50%;
+		display:block;
+		margin:10px auto;
+		
+	}
+	
+	#author-identify p {
+		
+		text-align:center;
+		font-size:50px;
+		
+	}
+	
+	/* Author Statistics Section. */
+	#author-stats {
+		
+		display:flex;
+		padding:15px;
+		flex-wrap:wrap;
+		justify-content:center;
+		
+	}
+	
+	#author-stats label {
+		
+		text-align:center;
+		width:100vh;
+		background:#DDD;
+		padding:15px 0;
+		
+	}
+	
+	#author-stats #stat-head {
+		
+		font-size:35px;
+		font-weight:bolder;
+		text-decoration:underline;
+		text-decoration-style:solid;
+		text-decoration-style:dotted;
+		
+	}
+	
+	#author-stats #stat-val {
+		
+		font-size:45px;
+		text-decoration:upperline;
+		
+	}
+	
+	#author-gallery {
+		
+		display:flex;
+		flex-wrap:wrap;
+		align-items:flex-start;
+		
+		
+	}
+	
+	#author-gallery div {
+		
+		width:100%;
+		display:inline-block;
+		height:225px;
+		overflow:hidden;
+		
+	}
+	
+	#author-gallery div img {
+		
+		min-height:inherit;
+		
+	}
+	
+	/* Author Page Styling End. */
+	
+	/* Normal Page Design. */
+	#page * {
+		
+		text-align:center;
+		
+	}
+	
+	/* Container */
+	.above {
+		
+		padding-top:40px;
+	
+	}
+	
+	.h1 {
+		
+		font-size:50px !important;
+		width:35px !important;
+		
+	}
+	
+}
+
+/* Medium Size Styling. */
+@media(min-width:350px) {
+	
+	#author-gallery div {
+		
+		width:50%;
+		
+	}
+	
+	#gallery-grid #picture {
+		
+		width:50%;
+		
+	}
+	
+}
+
+/* Big Size Styling. */
+@media(min-width:700px) {
+	
+	body { margin-top:75px; }
+	
+	/* Upper Navbar Start. */
+	
+	#uppernav {
+		
+		height:75px;
+		bottom:calc(100vh - 75px);
+		
+	}
+	
+	#menu-toggle { 
+	
+		margin-right:20px;
+		padding-top:20px;
+	
+	} 
+	
+	#menu-toggle i {
+		
+		font-size:40px;
+		
+	}
+	
+	#uppernav p {
+		
+		font-size:40px;
+		margin:12.5px;
+		
+	}
+	
+	/* Upper Navbar End. */
+	
+	/* Upper Menu Start. */
+	
+	.menu a , .menu i {
+		
+		font-size:55px;
+		
+	}
+	
+	/* Raise The Social Links Just a Bit. */
+	#down {
+		
+		bottom:75px;
+		
+	}
+	
+	/* upper Menu End. */
+	
+	/* Gallery Grid Styling. */
+	#gallery-grid > #picture {
+		
+		height:350px;
+		width:33.333333333%;
+		
+	}
+	
+	/* Author Page Styling Start. */
+	
+	#author-identify {
+		
+		padding-top:75px;
+		
+	}
+	
+	#author-stats label {
+		
+		width:32.3333333%;
+		margin:0 0.5%;
+		padding:5px;
+		
+	}
+	
+	#author-gallery div {
+		
+		width:33.333333%;
+		height:250px;
+		
+	}
+	
+	#author-gallery div img {
+		
+		min-height:inherit;
+		
+	}
+	
+	/* Author Page Styling End. */	
+	
+	/* Post Start. */
+	
+	#post {
+		
+		width:49%;
+		padding:0.5%;
+		
+	}
+	
+	/* Post End. */
+	
+	/* Footer Styling Start. */
+	
+	#footer-widgets li {
+		
+		width:32vw;
+		padding:10px 0;
+		
+	}
+	
+	/* Footer Styling End. */
+	
+	/* Container. */
+	.above {
+		
+		padding-top:75px;
+		
+	}
+	
+}
+
+/* Extra Big Size Styling. */
+@media(min-width:1500px) {
+	
+	#author-gallery div {
+		
+		width:25%;
+		
+	}
+	
+	#gallery-grid #picture {
+		
+		width:25%;
+		
+	}	
+	
+}
+
+/* ---------- My FrameWork Here. ----------- */
+.back-image {
+	
+	background-attachment:fixed;
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	
+}
+/* search form Styling Start. */
+#searchform {
+	
+	border:2px solid #DDD;
+	display:flex;
+	border-radius:50px;
+	width:300px;
+	height:50px;
+	align-items:center;
+	justify-content:center;
+	margin:10px auto;
+	background:#DDD;
+	
+}
+
+#searchform button {
+	
+	border:none;
+	background:none;
+	width:20%;
+}
+
+#searchform input {
+	
+	border:none;
+	font-size:25px;
+	border-radius:50px;
+	text-indent:15px;
+	height:100%;
+	width:80%;
+	
+}
+
+#searchform button i { 
+
+	width:100%;
+	height:100%;
+	font-size:35px;
+	background:none;
+	color:#444;
+
+}
+
+.search-page #searchform { width:80%; }
+
+/* Search Form Styling End. */
+
+#sign {
+	
+	display:block;
+	text-align:center;
+	padding:20px;
+	margin:0 10px;
+	margin-bottom:10px;
+	
+}
+
+#sign i {
+	
+	font-size:50px;
+	margin-right:20px;
+	
+}
