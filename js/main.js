@@ -29,7 +29,7 @@ function menu_toggle (ele,butt) {
 function social_media_links () {
 	
 	//Find All Social Media Links In The Page.
-	let social_butts = document.querySelectorAll("#social-links,#menu-social-media");
+	let social_butts = document.querySelectorAll("#social-links");
 	
 	//Loop Inside Them.
 	for(let i = 0,n = social_butts.length;i < n;i++) {
@@ -38,6 +38,13 @@ function social_media_links () {
 		
 		//Loop InEach Child.
 		for(let ii = 0,nn = social_butt_parent.length;ii < nn;ii++) {
+			
+			//Check If It's a Valid.
+			if( social_butt_parent[ii].children.length <= 0 ) {
+				
+				continue;
+				
+			}
 			
 			//Check The Name Writen On It.
 			let social_network_name = social_butt_parent[ii].children[0].innerHTML;

@@ -6,13 +6,13 @@ function lg_include_scripts () {
 	//Register Bootstrap.
 	wp_enqueue_style("bootstrap",get_template_directory_uri() . "/css/bootstrap.min.css");
 	wp_enqueue_style("bootstrap-grid",get_template_directory_uri() . "/css/bootstrap-grid.min.css");
-	wp_enqueue_script('bootstrap-js',get_template_directory_uri() . "/js/bootstrap.min.js",array('jquery'),null,true);
+	wp_enqueue_script('bootstrap-js',get_template_directory_uri() . "/js/bootstrap.min.js",array('jquery'),false,true);
 	
     //Include The Main StyleSheet.
     wp_enqueue_style("style",get_stylesheet_uri());
 	
 	//Include Main Javascript File.
-	wp_enqueue_script("options",get_theme_root_uri() . "/lg_photographer/js/main.js",array(),true,true);
+	wp_enqueue_script("options",get_template_directory_uri() . "/js/main.js",array(),false,true);
 	
 	//Include Dashicons.
 	wp_enqueue_style("dashicons");
@@ -452,13 +452,6 @@ function apply_styling () {
 	
 		echo "background-color:rgba(" . implode(',',$upper_background) . "," . (get_theme_mod('header-background-opacity',255) / 255) . ");";
 		echo "color:" . get_theme_mod('header-color') . ";";
-	
-		//Check If The AdminBar Is Activited.
-		if( is_admin_bar_showing() ) {
-			
-			echo "top:25px";
-			
-		}
 	
 	echo "}";
 	

@@ -16,7 +16,7 @@ class Social_Links extends WP_Widget {
 
 	function widget ($args,$instance) {
 		
-		echo '<h2>' . $instance['title'] . '</h2>';
+		echo empty($instance['title']) ? '':'<h2>' . $instance['title'] . '</h2>';
 		
 		wp_nav_menu(array(
 		

@@ -25,6 +25,14 @@
 			
 			));
 			
+			//Check If There's Any Pictures Found.
+			if( $pics->found_posts < 1 ) {
+				
+				wp_reset_postdata();
+				return;
+				
+			}
+			
 			//Gallery Body.
 			echo "<a id = 'gallery-grid' style = 'padding-top:75px;'>";
 
