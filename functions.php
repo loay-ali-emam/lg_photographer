@@ -1,5 +1,12 @@
 <?php
 
+//Check Abs Path.
+if(! defined('ABSPATH')) {
+	
+	exit;
+	
+}
+
 /* Include Main Scripts. */
 function lg_include_scripts () {
 	

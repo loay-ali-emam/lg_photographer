@@ -7,6 +7,7 @@
 
 	<!-- Author Profile Name. -->
 	<p id = 'site-name'><?php echo ucwords(get_the_author_meta('display_name')); ?></p>
+	<h4 class = 'text-center'><?php echo get_the_author_meta("email"); ?></h4><hr />
 
 	<?php if(get_the_author_meta("user_description")): ?>
 

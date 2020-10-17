@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<title>Title Here</title>
+		<title><?php bloginfo('name'); ?></title>
 			<?php
 		//Check If The Admin Bar Is Visible.
 		if(is_admin_bar_showing()) {
@@ -31,12 +31,13 @@
 		} ?>
 		<meta charset = '<?php bloginfo('charset'); ?>' />
 		<meta name = 'viewport' content = 'width=device-width,initial-scale=1.0' />
+		<meta name = 'description' content = "<?php bloginfo('description'); ?>" />
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 		<header id = 'uppernav'>
 
-			<a id = 'site-id' href = '<?php echo bloginfo('url'); ?>'>
+			<a class = 'd-inline-block' id = 'site-id' href = '<?php echo bloginfo('url'); ?>'>
 			<p id = 'site-id'>
 			
 			<?php 
