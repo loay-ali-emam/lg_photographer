@@ -12,6 +12,9 @@
 
 </div>
 
+<h2 id = 'sign'>Comments</h2>
+<?php comments_template(); ?>
+
 <?php get_template_part("templates/single_pagination"); ?>
 
 <?php get_footer(); ?>

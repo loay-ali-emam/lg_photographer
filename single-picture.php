@@ -36,19 +36,15 @@
 	
 	<?php if( comments_open(get_the_ID()) ): ?>
 	<!-- Comments Section -->
-	<section 
+	<section id = 'comments'
 		class = 'col-11 mx-auto p-3 mt-3' 
 		style = 'background-color:<?php echo get_theme_mod('header-background-color'); ?>;color:<?php echo get_theme_mod('header-color'); ?>;'>
-	
-		<b class = "h1 font-weight-bold d-inline"><i class = "dashicons dashicons-admin-comments h1 mr-2"></i></b><p class = 'd-inline ml-3 h1'><?php echo get_comments_number(get_the_ID()); ?></p><br />
-	
-		<b class = 'h1 text-center font-weight-bold' style = 'text-decoration:underline;'>Comments</b>
 	
 		<?php if( get_comments_number(get_the_ID()) == 0 ): ?>
 		
 			<p class = 'text-center h3 d-inline'>Their's No Comments For This Picture</p>
 		
-		<?php else: 
+		<?php else: /*
 		
 				//Get The Comments.
 				$picture_comments = get_comments(get_the_ID());
@@ -89,10 +85,12 @@
 				
 					}
 				
-				}
-		
-			endif;
+				} */
+				
+				comments_template();
 			
+			endif;
+			/*
 			//Check If The Comments Are Allowed.
 			if(comments_open()) {
 				
@@ -109,19 +107,14 @@
 				//The Comment Form.
 				comment_form($comment_form_args);
 				
-			}
+			}*/
 			
 			?>
 	
 		</section>
 	
 	<?php endif; ?>
-	
-	<?php 
-	
 
-	?>
-
-</div>
+</div><br />
 
 <?php get_footer(); ?>

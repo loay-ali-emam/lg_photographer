@@ -121,4 +121,21 @@ window.onload = function () {
 	//Once Page Load Trigger These Functions.
 	social_media_links();
 	
+	//Style The Comment Form Inputs.
+	let comment_inputs = document.querySelectorAll("[class*='comment-form-']");
+	
+	if(comment_inputs) {
+		
+		for(let i = 0,n = comment_inputs.length;i < (n - 1);i++) {
+			
+			let field_name = comment_inputs[i].children[0].innerHTML;
+			
+			comment_inputs[i].children[0].outerHTML = "";
+			
+			comment_inputs[i].children[0].placeholder = field_name.split(" ")[0];
+			
+		}
+		
+	}
+	
 };
